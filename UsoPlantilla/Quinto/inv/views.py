@@ -22,7 +22,7 @@ class CategoriaNew(LoginRequiredMixin, generic.CreateView):
     context_object_name = "obj"
     form_class = CategoriaForm
     success_url = reverse_lazy("inv:categoria_list")
-    login_url = "base:login"
+    login_url = "bases:login"
 
     def form_valid(self, form):
         form.instance.uc = self.request.user
@@ -35,7 +35,7 @@ class CategoriaEdit(LoginRequiredMixin, generic.UpdateView):
     context_object_name = "obj"
     form_class = CategoriaForm
     success_url = reverse_lazy("inv:categoria_list")
-    login_url = "base:login"
+    login_url = "bases:login"
 
     def form_valid(self, form):
         form.instance.um = self.request.user.id
@@ -62,7 +62,7 @@ class SubCategoriaNew(LoginRequiredMixin, generic.CreateView):
     context_object_name = "obj"
     form_class = SubCategoriaForm
     success_url = reverse_lazy("inv:subcategoria_list")
-    login_url = "base:login"
+    login_url = "bases:login"
 
     def form_valid(self, form):
         form.instance.uc = self.request.user
@@ -75,7 +75,7 @@ class SubCategoriaEdit(LoginRequiredMixin, generic.UpdateView):
     context_object_name = "obj"
     form_class = SubCategoriaForm
     success_url = reverse_lazy("inv:subcategoria_list")
-    login_url = "base:login"
+    login_url = "bases:login"
 
     def form_valid(self, form):
         form.instance.um = self.request.user.id
@@ -102,7 +102,7 @@ class MarcaNew(LoginRequiredMixin, generic.CreateView):
     context_object_name = "obj"
     form_class = MarcaForm
     success_url = reverse_lazy("inv:marca_list")
-    login_url = "base:login"
+    login_url = "bases:login"
 
     def form_valid(self, form):
         form.instance.uc = self.request.user
@@ -115,7 +115,7 @@ class MarcaEdit(LoginRequiredMixin, generic.UpdateView):
     context_object_name = "obj"
     form_class = MarcaForm
     success_url = reverse_lazy("inv:marca_list")
-    login_url = "base:login"
+    login_url = "bases:login"
 
     def form_valid(self, form):
         form.instance.um = self.request.user.id
