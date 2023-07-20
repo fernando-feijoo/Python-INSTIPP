@@ -37,7 +37,7 @@ class SubCategoriaForm(forms.ModelForm):
             self.fields[field].widget.attrs.update({
                 'class': 'form-control'
             })
-        self.fields['categoria'].empty_label = "Seleccione Categoría"
+        self.fields['categoria'].empty_label = "Seleccione Provincia"
 
 
 class MarcaForm(forms.ModelForm):

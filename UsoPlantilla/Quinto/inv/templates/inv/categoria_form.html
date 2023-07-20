@@ -15,7 +15,7 @@
             <div class="col mr-2">
               <div
                 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                {% if obj %} Editar {% else %} Nueva {% endif %} Categoría
+                {% if obj %} Editar {% else %} Nueva {% endif %} Provincia
               </div>
 
               <div class="dropdown-divider"></div>
@@ -24,7 +24,7 @@
                   <div class="input-group">
                     <input type="text" name="descripcion" maxlength="100"
                       class="form-control" required id="id_descripcion"
-                      placeholder="Descripción"
+                      placeholder="Nombre de Provincia"
                       value="{% if obj %} {{ obj.descripcion }} {% endif %}">
                     <!-- </div> -->
                     <div class="col-2">
