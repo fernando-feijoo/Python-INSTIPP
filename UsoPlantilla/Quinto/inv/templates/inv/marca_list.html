@@ -7,7 +7,7 @@
   <!-- Card Header - Dropdown -->
   <div
     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-    <h6 class="m-0 font-weight-bold text-primary">Listado de Unidad de Medida</h6>
+    <h6 class="m-0 font-weight-bold text-primary">Listado de Clientes</h6>
     <div class="dropdown no-arrow">
       <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -16,36 +16,43 @@
       <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
         aria-labelledby="dropdownMenuLink">
         <div class="dropdown-header">Acciones:</div>
-        <a class="dropdown-item" href="{% url 'inv:marca_new' %}"><i class="far fa-calendar-plus"></i> Nueva</a>
+        <a class="dropdown-item" href="{% url 'inv:marca_new' %}"><i
+            class="far fa-calendar-plus"></i> Nuevo Cliente</a>
       </div>
     </div>
   </div>
   <!-- Card Body -->
   <div class="card-body">
     {% if not obj %}
-    <div class="alert alert-info">No hay Marcas</div>
+    <div class="alert alert-info">No hay Clientes</div>
     {% else %}
     <table class="table table-striped table-hover">
       <thead>
-        <th>Id</th>
-        <th>Descripción</th>
+        <th>Cédula</th>
         <th>Estado</th>
-        <th>F. Creado</th>
-        <th>F. Modif.</th>
+        <th>Apellido</th>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Ciudad</th>
+        <th>Teléfono</th>
         <th class="all">Acciones</th>
       </thead>
       <tbody>
         {% for item in obj %}
         <tr>
-          <td>{{ item.id }}</td>
-          <td>{{ item.descripcion }}</td>
+          <td>{{ item.cedula }}</td>
           <td>{{ item.estado|yesno:"Activo,Inactivo" }}</td>
-          <td>{{ item.fc|date:"d/m/Y H:i:s" }}</td>
-          <td>{{ item.fm|date:"d/m/Y H:i:s" }}</td>
+          <td>{{ item.apellido }}</td>
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.direccion }}</td>
+          <td>{{ item.ciudad }}</td>
+          <td>{{ item.telefono }}</td>
           <td>
-            <a href="{% url 'inv:marca_edit' item.id %}" class="btn btn-warning btn-circle" role="button"><i
+            <a href="{% url 'inv:marca_edit' item.id %}"
+              class="btn btn-warning btn-circle" role="button"><i
                 class="far fa-edit"></i></a>
-            <a href="{% url 'inv:marca_inactivar' item.id %}" class="btn btn-danger btn-circle" role="button"><i
+            <a href="{% url 'inv:marca_inactivar' item.id %}"
+              class="btn btn-danger btn-circle" role="button"><i
                 class="far fa-thumbs-down"></i></a>
           </td>
         </tr>

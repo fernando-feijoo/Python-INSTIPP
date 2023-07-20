@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}
 
 {% block page_content %}
-<form method="POST" class="form-inline">
+<form method="POST" class="my-4">
   {% csrf_token %}
   <div class="col-xl-12 col-md-12 mb-12">
     {% if obj %}
@@ -15,30 +15,51 @@
             <div class="col mr-2">
               <div
                 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                {% if obj %} Editar {% else %} Nueva {% endif %} Marca
+                {% if obj %} Editar {% else %} Nuevo {% endif %} Cliente
               </div>
 
               <div class="dropdown-divider"></div>
-              <div class="row">
-                <div class="col-10">
-                  <div class="input-group">
-                    <!-- <input type="text" name="descripcion" maxlength="100"
-                      class="form-control" required id="id_descripcion"
-                      placeholder="Descripción" value="{% if obj %} {{ obj.descripcion }} {% endif %}"> -->
-                    {{ form.descripcion }}
-                  </div>
+              <div class="row mb-3">
+                <div class="col-12">
+                  <label for="{{ form.cedula.id_for_label }}" class="form-label">Cédula</label>
+                  {{ form.cedula }}
                 </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="{{ form.apellido.id_for_label }}"
+                    class="form-label">Apellido</label>
+                  {{ form.apellido }}
+                </div>
+                <div class="col-md-6">
+                  <label for="{{ form.nombre.id_for_label }}" class="form-label">Nombre</label>
+                  {{ form.nombre }}
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-12">
+                  <label for="{{ form.direccion.id_for_label }}"
+                    class="form-label">Dirección</label>
+                  {{ form.direccion }}
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="{{ form.ciudad.id_for_label }}" class="form-label">Ciudad</label>
+                  {{ form.ciudad }}
+                </div>
+                <div class="col-md-6">
+                  <label for="{{ form.telefono.id_for_label }}"
+                    class="form-label">Teléfono</label>
+                  {{ form.telefono }}
+                </div>
+              </div>
+              <div class="row mb-3">
                 <div class="col-2">
-                  <div class="input-group">
-                    <label for="id_estado">Estado</label>
-                    <!-- <label for="id_estado">Estado</label>
-                        <input type="checkbox" name="estado"
-                          class="form-control"
-                          id="id_estado" {% if obj.estado %} checked {% endif %}> -->
-                    {{ form.estado }}
-                  </div>
+                  <label for="{{ form.estado.id_for_label }}"
+                    class="form-label">Estado</label>
+                  {{ form.estado }}
                 </div>
-                <!-- {{ form.as_p }} -->
               </div>
 
               <div class="dropdown-divider"></div>

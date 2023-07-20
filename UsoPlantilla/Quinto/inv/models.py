@@ -41,19 +41,43 @@ class SubCategoria(ClaseModelo):
         verbose_name_plural = "Sub Categorias"
         unique_together = ('categoria', 'descripcion')
 
+
 class Marca(ClaseModelo):
-    descripcion = models.CharField(
+    
+    cedula = models.CharField(
+        max_length=13,
+        help_text='Cedula del Cliente',
+        unique=True,
+        null=True
+    )
+    apellido = models.CharField(
         max_length=100,
-        help_text='Descripcion de la Marca',
-        unique=True
+        help_text='Apellido del cliente',
+        null=True
+    )
+    nombre = models.CharField(
+        max_length=100,
+        help_text='Nombre del cliente',
+        null=True
+    )
+    direccion = models.CharField(
+        max_length=200,
+        help_text='Dirección del cliente',
+        null=True
+    )
+    ciudad = models.CharField(
+        max_length=100,
+        help_text='Ciudad del cliente',
+        null=True
+    )
+    telefono = models.CharField(
+        max_length=15,
+        help_text='Teléfono del cliente',
+        null=True
     )
 
     def __str__(self):
-        return '{}'.format(self.descripcion)
-
-    def save(self):
-        self.descripcion = self.descripcion.upper()
-        super(Marca, self).save()
+        return '{}'.format(self.cedula)
 
     class Meta:
         verbose_name_plural = "Marca"
