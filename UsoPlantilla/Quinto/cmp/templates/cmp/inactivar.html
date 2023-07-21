@@ -55,7 +55,7 @@
         data: data,
         beforeSend: function(xhr, settings){
           $.ajaxSetup.beforeSend(xhr, settings);
-        }
+        },
         success: function(response){
           console.log(response);
           cerrar_modal();
