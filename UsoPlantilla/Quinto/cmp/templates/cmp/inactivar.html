@@ -35,7 +35,7 @@
     $.ajaxSetup({
       beforeSend: function(xhr, settings){
         if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))){
-          xhr.setRequestHeader("X-CRSFToken", token);
+          xhr.setRequestHeader("X-CSRFToken", token);
         }
       }
     });
